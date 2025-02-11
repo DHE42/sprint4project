@@ -1,2 +1,2 @@
-install streamlit pandas plotly
+
 
