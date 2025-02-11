@@ -1,2 +1,2 @@
-pip install streamlit pandas plotly
+install streamlit pandas plotly
 
