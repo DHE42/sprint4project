@@ -1,5 +1,2 @@
-import streamlit as st
+pip install streamlist pandas plotly
 
-import pandas as pd
-
-import plotly.express as px
