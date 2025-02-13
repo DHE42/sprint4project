@@ -19,14 +19,28 @@ labels = [f"{int(start)}s" for start in bins[:-1]]  # Create labels for each dec
 vehicles_df['decade'] = pd.cut(vehicles_df['model_year'], bins=bins, labels=labels, right=False)
 
     # Create a histogram using Plotly Express
-fig = px.histogram(vehicles_df, x="price", color="decade",
+fig_1 = px.histogram(vehicles_df, x="price", color="decade",
                    nbins=400, barmode="stack",
                    title="Histogram of Price Distribution by Decade",
                    labels={"price": "Price ($)", "decade": "Decade"},
                    opacity=0.7)
 
     # Update the x axis to only show prices 0 to 50,000, since the majority of prices are below 50,000
-fig.update_xaxes(range=[0, 60000])
+fig_1.update_xaxes(range=[0, 60000])
 
 # Show the plot
-st.plotly_chart(fig)
+st.plotly_chart(fig_1)
+
+# Header 2
+st.header("Vehicle Price by Model Year")
+
+# Scatter plot
+fig_3 = px.scatter(vehicles_df, 
+                 x='model_year', 
+                 y='price', 
+                 title='Vehicle Price vs. Model Year',
+                 labels={'model_year': 'Model Year', 'price': 'Price'},
+                 trendline="ols")
+
+# Show the plot
+st.plotly_chart(fig_3)
