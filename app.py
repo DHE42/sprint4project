@@ -4,7 +4,7 @@ import plotly.express as px
 import plotly.figure_factory as ff
 
 # Load CSV
-vehicles_df = pd.read_csv('/Users/dianuselvenbough/Desktop/vehicles_us.csv')
+vehicles_df = pd.read_csv('vehicles_us.csv')
 
 # Header
 st.header("Vehicle Price by Decade")
