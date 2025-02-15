@@ -4,6 +4,7 @@ import plotly.express as px
 import plotly.figure_factory as ff
 import numpy as np
 
+
 # Load CSV
 vehicles_df = pd.read_csv('vehicles_us.csv')
 
