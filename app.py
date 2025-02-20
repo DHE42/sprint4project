@@ -15,11 +15,11 @@ st.header("Vehicle Price by Decade")
 # Histogram
 
     # Define decade bins
-bins = np.arange(1900, 2040, 10)  # Decade bins from 1900 to 2020
+bins = np.arange(1920, 2040, 10)  # Decade bins from 1900 to 2020
 labels = [f"{int(start)}s" for start in bins[:-1]]  # Create labels for each decade
 
     # Assign each model_year to a decade bin
-vehicles_df['decade'] = pd.cut(vehicles_df['model_year'], bins=bins, labels=labels, right=True)
+vehicles_df['decade'] = pd.cut(vehicles_df['model_year'], bins=bins, labels=labels, right=False)
 
 # Create a histogram using Plotly Express
 fig_1 = px.histogram(vehicles_df, x="price", color="decade",
