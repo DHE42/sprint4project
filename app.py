@@ -15,7 +15,7 @@ st.header("Vehicle Price by Decade")
 # Histogram
 
     # Define decade bins
-bins = np.arange(1900, 2030, 10)  # Decade bins from 1900 to 2020
+bins = np.arange(1900, 2040, 10)  # Decade bins from 1900 to 2020
 labels = [f"{int(start)}s" for start in bins[:-1]]  # Create labels for each decade
 
     # Assign each model_year to a decade bin
