@@ -22,7 +22,7 @@ labels = [f"{int(start)}s" for start in bins[:-1]]  # Create labels for each dec
 vehicles_df['decade'] = pd.cut(vehicles_df['model_year'], bins=bins, labels=labels, right=False)
 
 # Create a histogram using Plotly Express
-fig_1 = px.histogram(vehicles_df, x="price", color="model_year",
+fig_1 = px.histogram(vehicles_df, x="price", color="decade",
                    nbins=400, barmode="stack",
                    title="Histogram of Price Distribution by Decade",
                    labels={"price": "Price ($)", "decade": "Decade"},
