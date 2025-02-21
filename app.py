@@ -4,10 +4,6 @@ import plotly.express as px
 import plotly.figure_factory as ff
 import numpy as np
 
-
-
-
-
 # Load CSV
 vehicles_df = pd.read_csv('vehicles_us.csv')
 
@@ -52,6 +48,7 @@ fig_3 = px.scatter(vehicles_df,
 for trace in fig_3.data:
     if "trendline" in trace.name:
         trace.line.color = "red"
+fig_3.update_traces(selector=dict(name="trendline"), line=dict(color='red'))
 
 # Show the plot
 st.plotly_chart(fig_3)
