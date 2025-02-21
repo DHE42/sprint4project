@@ -46,5 +46,9 @@ fig_3 = px.scatter(vehicles_df,
                  labels={'model_year': 'Model Year', 'price': 'Price'},
                  trendline="ols")
 
+# Change trendline to red
+
+fig_3.update_traces(selector=dict(name="trendline"), line=dict(color='red'))
+
 # Show the plot
 st.plotly_chart(fig_3)
