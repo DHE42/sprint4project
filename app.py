@@ -49,7 +49,9 @@ fig_3 = px.scatter(vehicles_df,
 
 # Change trendline to red
 
-fig_3.update_traces(selector=dict(name="trendline"), line=dict(color='red'))
+for trace in fig_3.data:
+    if "trendline" in trace.name:
+        trace.line.color = "red"
 
 # Show the plot
 st.plotly_chart(fig_3)
